@@ -2,18 +2,18 @@ import random,string
 class Credential:
     """class that create instances of the Credential class"""
 
-    def __init__(self,master_password,username,email,account):
-        credentials_list=[]
+    def __init__(self,password,username,email,account):
+        _list=[]
         '''
         method that allows us to define properties of our objects
         Args:
-        master_password:random password generated to an individual
+        :random password generated to an individual
         '''
-        self.master_password=master_password
+        self.password=password
         self.username=username
         self.email=email
         self.account=account
-        Credential.credentials_list.append({'Your Account:'self.account,' Your Username:'self.username,'Enail:'self.email,'Password:'self.password})
+        Credential.credentials_list.append({'Your Account':self.account, 'Your Username':self.username,'Enail':self.email,'Password':self.password})
 
     @classmethod
     def create_acount(cls):
@@ -26,8 +26,8 @@ class Credential:
         '''
         Method that generates random master password of range 1 to 7
         '''
-        master_password=Credential(random.randint(1,7))
-        print(master_password)
+        password=Credential(random.randint(1,7))
+        print(password)
 
     @classmethod
     def store_pass(cls):
@@ -48,7 +48,7 @@ class Credential:
         This method enables us to display accounts for a given user
         '''
         if cls.credentials_list:
-            print(account&&username&&email&&master_password)
+            print(account+username+email+password)
         else:
             print("You have no accounts yet")
     @classmethod
