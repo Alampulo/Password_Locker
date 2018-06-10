@@ -14,7 +14,27 @@ def main():
         if Short_Code==1:
             print("crete new account")
             print('\n')
-            print("First Name.....")
-            First_name=input()
-            print("Second name...")
-            Second_name=input()
+            print("Email.....")
+            Email=input()
+            print("Master_Password..")
+            Master_Password=int(input())
+        else:
+            print("Wrong password or email")
+            print("In case you've forgotten ,sign up")
+            print("Select an option:\n 1-login \n 2-try again")
+            option=int(input())
+            if option==1:
+                main()
+            elif option==2:
+                sign_up()
+            else:
+                sign_up()
+
+
+def sign_up():
+    '''
+    A function that allows one to sign up as new user or when one has forgotten the password
+    '''
+    username=input("Enter your user name here:")
+    while True:
+        master_password=gen_randompass()

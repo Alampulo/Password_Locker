@@ -24,9 +24,9 @@ class Credential:
     @classmethod
     def gen_randompass(cls):
         '''
-        Method that generates random master password of range 1 to 7
+        Method that generates random master password of range 1 to 6
         '''
-        password=Credential(random.randint(1,7))
+        password=Credential(random.randint(1,6))
         print(password)
 
     @classmethod
