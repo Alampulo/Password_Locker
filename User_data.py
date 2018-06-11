@@ -15,7 +15,9 @@ class UserData:
 
     @classmethod
     def total_users(cls):
-        pass
+        return(f"We currently have {cls}users")
+    @classmethod
+    def list_of_users(cls):
+        return cls.users
     def __repr(self):
         return self
-        

@@ -17,9 +17,9 @@ class TestCredential(unittest.TestCase):
         Test to determine whether it is possible to generate new passwords
         '''
         self.new_password.generatenewpassword()
-        new_password=random.randint(1,7)
+        new_password=random.randint(123454,789353)
         self.assertEqual(new_password,master_password)
-        pass
+
 
     def test_accountexists(self):
         '''
@@ -27,15 +27,12 @@ class TestCredential(unittest.TestCase):
         it returns a boolean value
         '''
         pass
-    def test_account creation(self):
+    def test_account_creation(self):
         '''
         Test to determine whether it is possible to create an account
         '''
         pass
-    def test_storespass(self):
-        '''
-        test to determine whether it is possible to store passwords
-        '''
+
     def test_copycredentials(self):
         '''
         test whether it is possible to copy the users input

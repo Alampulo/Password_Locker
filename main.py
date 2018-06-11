@@ -12,29 +12,57 @@ def main():
         print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts")
         Short_Code=int(input())
         if Short_Code==1:
-            print("crete new account")
-            print('\n')
-            print("Email.....")
-            Email=input()
-            print("Master_Password..")
-            Master_Password=int(input())
+            # print("crete new account")
+            # print('\n')
+            # print("Email.....")
+            # Email=input()
+            # Master_Password=gen_randompass()
+            # print(f"Your Master Password is {Master_Password}")
+            create_acount()
+        elif Short_Code==2:
+            display_credentials()
+    else:
+        print("Wrong password or email")
+        print("In case you've forgotten ,sign up")
+        print("Select an option:\n 3-login \n 4-try again")
+        option=int(input())
+        if option==3:
+            login()
+        elif option==4:
+            login()
         else:
-            print("Wrong password or email")
-            print("In case you've forgotten ,sign up")
-            print("Select an option:\n 1-login \n 2-try again")
-            option=int(input())
-            if option==1:
-                main()
-            elif option==2:
-                sign_up()
-            else:
-                sign_up()
+            create_acount()
 
 
-def sign_up():
+def login():
     '''
-    A function that allows one to sign up as new user or when one has forgotten the password
+    A function that allows one to login to their current account
     '''
-    username=input("Enter your user name here:")
-    while True:
-        master_password=gen_randompass()
+    pass
+def create_acount():
+    '''
+    Method that creates an account of a user
+    '''
+    account=input("Enter your Account:")
+    username=input("Enter your user name:")
+    email=input("Enter your email:")
+    password=gen_randompass()
+    print(f"You have successfully created an account your masterpassword will be:{password}")
+
+
+def gen_randompass():
+    '''
+    Method that generates random master password of range 1 to 6
+    '''
+    password=random.randint(123454,789353)
+    return(password)
+def display_credentials():
+    '''
+    This method enables us to display accounts for a given user
+    '''
+    if Credential.credentials_list:
+        print(account+username+email+password)
+    else:
+        print("You have no accounts yet")
+if __name__ == '__main__':
+    main()
