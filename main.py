@@ -9,7 +9,7 @@ def main():
     username=input()
     print(f"Hello {username}.What would you like to do?")
     while True:
-        print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts")
+        print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts,5-login,9-exit")
         Short_Code=int(input())
         if Short_Code==1:
             # print("crete new account")
@@ -32,6 +32,8 @@ def main():
             login()
         else:
             create_acount()
+        if Short_Code==9:
+            exit_account()
 
 
 def login():
@@ -47,7 +49,9 @@ def create_acount():
     username=input("Enter your user name:")
     email=input("Enter your email:")
     password=gen_randompass()
+    Credential(password,username,email,account)
     print(f"You have successfully created an account your masterpassword will be:{password}")
+    print(Credential.credentials_list)
 
 
 def gen_randompass():

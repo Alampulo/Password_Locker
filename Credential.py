@@ -13,33 +13,34 @@ class Credential:
         self.username=username
         self.email=email
         self.account=account
-        Credential.credentials_list.append({'Your Account':self.account, 'Your Username':self.username,'Enail':self.email,'Password':self.password})
+        Credential.credentials_list.append({'Your Account':self.account, 'Your Username':self.username,'Email':self.email,'Password':self.password})
 
-    @classmethod
-    def create_acount(cls):
-        '''
-        Method that creates an account of a user
-        '''
-        account=input("Enter your Account:")
-        username=input("Enter your user name:")
-        email=input("Enter your email:")
-        password=gen_randompass()
-        print(f"You have successfully created an account your masterpassword will be:{password}")
+    # @classmethod
+    # def create_acount(cls):
+    #     '''
+    #     Method that creates an account of a user
+    #     '''
+    #     account=input("Enter your Account:")
+    #     username=input("Enter your user name:")
+    #     email=input("Enter your email:")
+    #     password=gen_randompass()
+    #     print(f"You have successfully created an account your masterpassword will be:{password}")
 
     @classmethod
     def gen_randompass(cls):
         '''
         Method that generates random master passwords
         '''
-        password=Credential(random.randint(123454,789353))
+        password=random.randint(123454,789353)
         return(password)
 
     @classmethod
-    def store_pass(cls):
+    def exit_account(cls):
         '''
-        Method that stores generated passwords
+        Method that alloow one to exist
         '''
-        pass
+        while True:
+            print("Thank You")
     @classmethod
     def copy_credentials(cls):
         '''
@@ -69,4 +70,4 @@ class Credential:
                 if cred['account']==acount:
                     cls.credentials_list.remove(cred)
         else:
-            print("Sorry no accont to be deleted!")
+            print("Sorry no account to be deleted!")
