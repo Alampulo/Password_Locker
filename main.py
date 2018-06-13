@@ -82,7 +82,7 @@ def display_credentials():
     '''
     This method enables us to display accounts for a given user
     '''
-    Creedential(password,username,email,account)
+    Credential(password,username,email,account)
     while True:
         print(Credential.credentials_list)
     else:
