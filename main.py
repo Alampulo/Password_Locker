@@ -21,6 +21,8 @@ def main():
             create_acount()
         elif Short_Code==2:
             display_credentials()
+        elif Short_Code==5:
+            login()
     else:
         print("Wrong password or email")
         print("In case you've forgotten ,sign up")
@@ -40,7 +42,11 @@ def login():
     '''
     A function that allows one to login to their current account
     '''
-    pass
+    if Credential==True:
+        print(Credential.credentials_list)
+    else:
+        print("Sorry you have no account yet")
+
 def create_acount():
     '''
     Method that creates an account of a user
@@ -64,8 +70,8 @@ def display_credentials():
     '''
     This method enables us to display accounts for a given user
     '''
-    if Credential.credentials_list:
-        print(account+username+email+password)
+    while True:
+        print(Credential.credentials_list)
     else:
         print("You have no accounts yet")
 if __name__ == '__main__':

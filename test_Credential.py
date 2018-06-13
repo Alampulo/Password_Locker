@@ -53,11 +53,7 @@ class TestCredential(unittest.TestCase):
         '''
         pass
 
-    def test_copycredentials(self):
-        '''
-        test whether it is possible to copy the users input
-        '''
-        pass
+
 
     def test_display_credentials(self):
         '''
