@@ -66,10 +66,23 @@ def gen_randompass():
     '''
     password=random.randint(123454,789353)
     return(password)
+
+# def display_credentials():
+#     '''
+#     This method enables us to display accounts for a given user
+#     '''
+#     if Credential.credentials_list:
+#         print(f"account:{account}\n username:{username}\n email:{email}")
+#         y=1
+#         for creds in Credential.credentials_list:
+#             print(f'\n{y}')
+#     else:
+#         print("You have no accounts yet")
 def display_credentials():
     '''
     This method enables us to display accounts for a given user
     '''
+    Creedential(password,username,email,account)
     while True:
         print(Credential.credentials_list)
     else:

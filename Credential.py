@@ -54,7 +54,7 @@ class Credential:
         This method enables us to display accounts for a given user
         '''
         if Credential.credentials_list:
-            print(f"account:{self.account}\n username:{self.username}\n email:{self.email}")
+            print(f"account:{account}\n username:{username}\n email:{email}")
             y=1
             for creds in Credential.credentials_list:
                 print(f'\n{y}')
