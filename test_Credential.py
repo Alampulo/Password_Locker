@@ -17,15 +17,6 @@ class TestCredential(unittest.TestCase):
         '''
         Method that runs after every test
         '''
-    # def test_init(self):
-    #     '''
-    #     test to check whether the objects have been initialized correctly
-    #     '''
-    #     self.assertEqual(self.credentials_list.password,123456)
-    #     self.assertEqual(self.credentials_list.username,"anilla")
-    #     self.assertEqual(self.credentials_list.email,"anilla@gmail")
-    #     self.assertEqual(self.credentials_list.account,"facebook")
-
 
 
     def test_generatenewpassword(self):

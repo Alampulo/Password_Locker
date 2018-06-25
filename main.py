@@ -1,28 +1,24 @@
 import random
-from User_data import UserData
+from User_data import UserData,User
 from Credential import Credential
+
 def main():
     '''
     A function that allows the user to choose what he wants
     '''
     print("Hello Welcome to Password Locker Apllication.What is your name?")
     username=input()
-    print(f"Hello {username}.What would you like to do?")
-    while True:
-        print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts,5-login,9-exit")
-        Short_Code=int(input())
-        if Short_Code==1:
-            # print("crete new account")
-            # print('\n')
-            # print("Email.....")
-            # Email=input()
-            # Master_Password=gen_randompass()
-            # print(f"Your Master Password is {Master_Password}")
-            create_acount()
-        elif Short_Code==2:
-            display_credentials()
-        elif Short_Code==5:
-            login()
+    password=gen_randompass()
+    print(f'Welcome your password to acces password locker in future is{password}')
+    print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts,5-login,9-exit")
+    Short_Code=int(input())
+    if Short_Code==1:
+
+        create_acount()
+    elif Short_Code==2:
+        display_credentials()
+    elif Short_Code==5:
+        login()
     else:
         print("Wrong password or email")
         print("In case you've forgotten ,sign up")
@@ -36,7 +32,7 @@ def main():
             create_acount()
         if Short_Code==9:
             exit_account()
-
+#
 
 def login():
     '''
@@ -49,15 +45,26 @@ def login():
 
 def create_acount():
     '''
-    Method that creates an account of a user
+    Function that creates an account of a user
     '''
-    account=input("Enter your Account:")
-    username=input("Enter your user name:")
-    email=input("Enter your email:")
-    password=gen_randompass()
-    Credential(password,username,email,account)
-    print(f"You have successfully created an account your masterpassword will be:{password}")
-    print(Credential.credentials_list)
+
+    print('Enter your Username:')
+    username=input()
+    if username in open('Cred.txt').read():
+        print('Add account details of your choice')
+        print("Enter your Account:")
+        account=input()
+        print('your password:')
+        password= input()
+        email=input("Enter your email:")
+        userdata= username,account,password
+        print(userdata)
+        f= open(f"{ username }.txt","w+")
+        f.write(str(userdata))
+        f.close()
+    else:
+        print('not found!')
+# create_acount()
 
 
 def gen_randompass():
@@ -71,21 +78,16 @@ def gen_randompass():
 #     '''
 #     This method enables us to display accounts for a given user
 #     '''
-#     if Credential.credentials_list:
-#         print(f"account:{account}\n username:{username}\n email:{email}")
-#         y=1
-#         for creds in Credential.credentials_list:
-#             print(f'\n{y}')
+#     # account=Credential.account
+#     # username=Credential.username
+#     # email=Credential.email
+#     # password=gen_randompass()
+#     Credential(password,username,email,account)
+#     # password=random.randint(123454,789353)
+#     # Credential(password,username,email,account)
+#     while True:
+#         print(Credential.credentials_list)
 #     else:
 #         print("You have no accounts yet")
-def display_credentials():
-    '''
-    This method enables us to display accounts for a given user
-    '''
-    Credential(password,username,email,account)
-    while True:
-        print(Credential.credentials_list)
-    else:
-        print("You have no accounts yet")
 if __name__ == '__main__':
     main()

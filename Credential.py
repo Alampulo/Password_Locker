@@ -15,17 +15,7 @@ class Credential:
         self.account=account
         Credential.credentials_list.append({'Your Account':self.account, 'Your Username':self.username,'Email':self.email,'Password':self.password})
 
-    # @classmethod
-    # def create_acount(cls):
-    #     '''
-    #     Method that creates an account of a user
-    #     '''
-    #     account=input("Enter your Account:")
-    #     username=input("Enter your user name:")
-    #     email=input("Enter your email:")
-    #     password=gen_randompass()
-    #     print(f"You have successfully created an account your masterpassword will be:{password}")
-
+    
     @classmethod
     def gen_randompass(cls):
         '''
