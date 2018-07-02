@@ -8,6 +8,7 @@ def main():
     '''
     print("Hello Welcome to Password Locker Apllication.What is your name?")
     username=input()
+    username=open('Cred.txt','a').write(username)
     password=gen_randompass()
     print(f'Welcome your password to acces password locker in future is{password}')
     print("Use these Short Codes provided below to decide on something:1-create new account,2-display contacts,5-login,9-exit")
